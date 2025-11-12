@@ -468,7 +468,7 @@ python fair2_validate.py --card your_dataset_card.md --level recommended
 
 ---
 
-## Resources
+## Resources (TO DO)
 
 ### Validation Tools
 - `fair2_template.py` - Generate blank template for your task type
@@ -479,8 +479,6 @@ python fair2_validate.py --card your_dataset_card.md --level recommended
 ### Example Datasets
 - KABR: Full multi-task dataset card
 - MMLA: Detection-only dataset card
-- SeabirdTracker: Tracking-focused card
-- BehaviorBank: Behavior recognition card
 
 ### Templates by Task
 - `template_detection.md` - Detection only (minimal)
@@ -500,8 +498,8 @@ python fair2_validate.py --card your_dataset_card.md --level recommended
 
 **Questions? Issues?**
 
-1. **GitHub Issues:** [repository]/issues
-2. **Discussion Forum:** [link to forum]
+1. **GitHub Issues:** fair_drones/issues
+2. **Discussion Forum:** [link to forum] (WILDLABS)
 3. **Email:** fair2-drone@example.org
 4. **Office Hours:** [schedule if available]
 
@@ -510,16 +508,6 @@ python fair2_validate.py --card your_dataset_card.md --level recommended
 - Report unclear sections
 - Suggest improvements
 - Build validation tools
-
----
-
-## Success Stories
-
-> "I was able to document my 50,000-image dataset in a single afternoon. The template made me realize I was missing coordinate uncertainty, which would have caused problems later." - *Researcher A*
-
-> "Converting our dataset to this standard meant other groups could immediately use it. We've had 5 collaborations in 6 months just because the metadata was complete." - *Researcher B*
-
-> "I thought I'd need a week. It took 3 hours. Best investment for dataset longevity." - *Researcher C*
 
 ---
 
