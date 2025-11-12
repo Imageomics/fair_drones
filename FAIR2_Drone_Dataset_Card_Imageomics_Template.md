@@ -763,8 +763,7 @@ Under the following terms:
 ```bibtex
 @article{kline2025fair2,
   title = {Toward a FAIR² Standard for Drone-Based Wildlife Monitoring Datasets},
-  author = {Kline, Jenna and Meier, Kilian and others},
-  journal = {Methods in Ecology and Evolution},
+  author = {Kline, Jenna and others},
   year = {2025},
   doi = {10.XXXX/XXXXX}
 }
