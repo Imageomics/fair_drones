@@ -12,7 +12,7 @@ task_categories:
   - object-detection
   - image-classification
   - video-classification
-  # Add others: image-segmentation, object-tracking, keypoint-detection, etc.
+  # Add others: image-segmentation, object-tracking, keypoint-detection, etc., see key list at https://github.com/huggingface/huggingface.js/blob/main/packages/tasks/src/pipelines.ts
 
 tags:
   - biology
@@ -24,7 +24,9 @@ tags:
   # Add specific tags: your species, habitat type, location, etc.
 
 size_categories: 
-  - 10K<n<100K  # Update based on your dataset size
+  - 10K<n<100K  # Update based on your dataset size: n<1K, 1K<n<10K, 10K<n<100K, 100K<n<1M, ...
+
+description: # Add a short description (Quick Summary) of your dataset, this will render as part of the CardData object through the API
 
 # FAIR² COMPLIANCE METADATA
 fair2_compliance:
@@ -87,7 +89,7 @@ FAIR² DRONE DATASET CARD - EXTENDED IMAGEOMICS TEMPLATE
 =============================================================================
 
 This dataset card implements the FAIR² Drone Data Standard for wildlife monitoring.
-It extends the standard Imageomics template with additional sections for:
+It extends the standard Imageomics template (https://imageomics.github.io/Imageomics-guide/wiki-guide/HF_DatasetCard_Template_mkdocs/) with additional sections for:
 - Darwin Core biodiversity metadata
 - Platform and sensor specifications  
 - Mission-level operational metadata
@@ -101,11 +103,19 @@ For more information on the FAIR² Drone Data Standard, see: [paper link]
 -->
 
 <!-- Include representative image of your dataset -->
-|![Example Image](https://huggingface.co/datasets/your-org/your-dataset/resolve/main/examples/example_001.jpg)|
+|![Image alt-text](https://huggingface.co/datasets/your-org/your-dataset/resolve/main/examples/example_001.jpg)|
 |:--|
 |**Figure 1.** Representative image from the dataset showing [describe what's shown].|
 
-# Dataset Card for [Dataset Name]
+<!--
+Notes on styling:
+
+To render LaTex in your README, wrap the code in `\\(` and `\\)`. Example: \\(\frac{1}{2}\\)
+
+Escape underscores ("_") with a "\". Example: image\_RGB
+-->
+
+# Dataset Card for [Dataset pretty_name]
 
 <!-- 
 Quick summary: What is this dataset and what can it be used for?
@@ -113,58 +123,55 @@ Example: "Multi-species aerial wildlife dataset from East African savannas,
 supporting detection, tracking, and behavioral classification tasks."
 -->
 
-**Quick Summary:** [One-sentence description]
-
 ## Dataset Details
 
 ### Dataset Description
 
-⚠️ **Essential Information:**
-- **Curated by:** [List all data collectors and annotators]
-- **Funded by:** [Funding sources]
+<!-- This section follows a particular format to display on the side panel of a Hugging Face dataset 
+Fill in your dataset and repo names, then add URL (works from Markdown URL format) -->
+
+- **Curated by:** List all data collectors and annotators
 - **Language(s):** English (metadata and documentation)
-- **License:** [License name with link]
-- **Homepage:** [Dataset website URL]
-- **Repository:** [Code/tools repository]
-- **Paper:** [Link to paper describing dataset]
-- **DOI:** [Persistent identifier]
+- **Homepage:** [Dataset website](URL)
+- **Repository:** [Code/tools repository](URL)
+- **Paper:** [title of paper describing dataset](URL)
 
-**Full Description:**
+<!-- Provide a longer summary of what this dataset is. -->
 
-[2-3 paragraphs describing:
+<!--This drone-focused dataset card aims to be a base template for new drone datasets. It has been generated using from the [Imageomics Dataset Card Template](https://github.com/Imageomics/Imageomics-guide/blob/main/docs/wiki-guide/HF_DatasetCard_Template_Imageomics.md) with particular consideration given to drone data needs.-->
+
+Add 2-3 paragraphs describing:
 - What: Species/ecosystems studied, data types collected
 - Why: Research objectives and conservation applications
 - How: Collection methodology at high level
 - When: Temporal coverage and sampling frequency
-- Where: Geographic locations and habitats]
+- Where: Geographic locations and habitats
 
 ### Supported Tasks and Applications
 
 This dataset supports the following computer vision and ecological analysis tasks:
 
+List those that apply, non-exhaustive suggestions by topic below:
 **🤖 Computer Vision Tasks:**
-- [ ] Object Detection (bounding boxes around animals)
-- [ ] Instance Segmentation (pixel-level masks)
-- [ ] Multi-Object Tracking (ID consistency across frames)
-- [ ] Re-identification (individual recognition)
-- [ ] Keypoint Detection (pose estimation)
-- [ ] Behavior Recognition (activity classification)
-- [ ] Other: [specify]
+- Object Detection (bounding boxes around animals)
+- Instance Segmentation (pixel-level masks)
+- Multi-Object Tracking (ID consistency across frames)
+- Re-identification (individual recognition)
+- Keypoint Detection (pose estimation)
+- Behavior Recognition (activity classification)
 
 **🌿 Ecological Applications:**
-- [ ] Population abundance estimation
-- [ ] Behavioral analysis
-- [ ] Habitat use patterns
-- [ ] Species distribution modeling
-- [ ] Conservation monitoring
-- [ ] Other: [specify]
+- Population abundance estimation
+- Behavioral analysis
+- Habitat use patterns
+- Species distribution modeling
+- Conservation monitoring
 
 **🤖 Robotics Applications:**
-- [ ] Navigation algorithm testing
-- [ ] Perception system benchmarking
-- [ ] Autonomy evaluation
-- [ ] Multi-platform coordination
-- [ ] Other: [specify]
+- Navigation algorithm testing
+- Perception system benchmarking
+- Autonomy evaluation
+- Multi-platform coordination
 
 **Benchmark Results:**
 
@@ -177,7 +184,11 @@ This dataset supports the following computer vision and ecological analysis task
 
 ## Dataset Structure
 
+<!-- This section provides a description of the dataset fields, and additional information about the dataset structure such as criteria used to create the splits, relationships between data points, etc. -->
+
 ### Directory Organization
+
+The suggested dataset structure for full drone data is provided below; modify as needed based on the tasks or applications supported by your data.
 
 ```
 dataset/
@@ -208,6 +219,12 @@ dataset/
 
 ### Data Instances
 
+<!--
+Describe data files
+
+Ex: All images are named <img_id>.png, each within a folder named for the species. They are 1024 x 1024, and the color has been standardized using <link to color standardization package>.
+-->
+
 **Images:**
 - Format: [JPG, PNG, TIFF, etc.]
 - Resolution: [width] x [height] pixels
@@ -234,9 +251,11 @@ Sensor Type: Optional suffix for multi-sensor data (_rgb, _thermal, etc.)
 
 ### Data Fields
 
+Provide more details about the included metadata.
+
 #### 🌿 Darwin Core Event Metadata (`metadata/darwin_core_events.csv`)
 
-⚠️ Required fields for Darwin Core compliance:
+⚠️ Required fields for minimal Darwin Core compliance are provided below, add any other available information you can:
 
 | Field | Type | Description | Example |
 |-------|------|-------------|---------|
@@ -261,7 +280,7 @@ Optional but recommended:
 
 #### 🌿 Darwin Core Occurrence Metadata (`metadata/darwin_core_occurrences.csv`)
 
-⚠️ Required fields for Darwin Core compliance:
+⚠️ Required fields for minimal Darwin Core compliance, add any other available information you can:
 
 | Field | Type | Description | Example |
 |-------|------|-------------|---------|
@@ -285,6 +304,8 @@ Optional but recommended:
 - `occurrenceRemarks`: Additional notes
 
 #### 🤖 Computer Vision Annotations
+
+Modify the example CV annotation format provided below to match the details of your data.
 
 **COCO Format** (`annotations/train/coco_format.json`):
 ```json
@@ -347,6 +368,12 @@ MOT Challenge format with species labels:
 
 ### Data Splits
 
+<!--
+Give your train-test splits for benchmarking; could be as simple as "split is indicated by the `split` column in the metadata file: `train`, `val`, or `test`." Or perhaps this is just the training dataset and other datasets were used for testing (you may indicate which were used).
+
+Example table provided.
+-->
+
 | Split | Images | Annotations | Species Coverage | Temporal Coverage |
 |-------|--------|-------------|------------------|-------------------|
 | Train | X,XXX | XX,XXX | All species | All seasons |
@@ -355,7 +382,7 @@ MOT Challenge format with species labels:
 
 **Split Methodology:**
 
-[Describe how splits were created, e.g.:]
+Describe how splits were created, e.g.:
 - Spatially stratified: Each split contains data from all survey locations
 - Temporally balanced: Seasonal representation maintained across splits
 - Mission-based: Complete missions assigned to splits (no frame-level splitting)
@@ -428,13 +455,12 @@ MOT Challenge format with species labels:
 - Available: [Yes/No]
 - Format: [CSV / GPX / KML / ROS bag]
 - Sampling rate: [XX Hz]
-- Fields included:
-  - [ ] GPS (lat/lon/alt)
-  - [ ] IMU (roll/pitch/yaw)
-  - [ ] Speed (ground/vertical)
-  - [ ] Battery level
-  - [ ] Gimbal angles
-  - [ ] [Other]
+- Fields included:        NOTE: Remove those that are not, add any others not listed
+  - GPS (lat/lon/alt)
+  - IMU (roll/pitch/yaw)
+  - Speed (ground/vertical)
+  - Battery level
+  - Gimbal angles
 
 **Environmental Conditions:**
 - Temperature range: [XX-XX°C]
@@ -447,7 +473,7 @@ MOT Challenge format with species labels:
 
 ⚠️ Full sampling protocol description:
 
-[Detailed description following Barnas et al. (2020) reporting standards:]
+[Fill in this detailed description following Barnas et al. (2020) reporting standards:]
 
 1. **Survey Design:**
    - [Systematic grid / transects / random sampling / adaptive]
@@ -491,7 +517,9 @@ MOT Challenge format with species labels:
 
 ### Curation Rationale
 
-[Describe the motivation for creating this dataset:]
+<!-- Motivation for the creation of this dataset. For instance, what you intended to study and why that required curation of a new dataset (or if it's newly collected data and why the data was collected (intended use)), etc. -->
+
+Describe the motivation for creating this dataset:
 - Scientific questions driving data collection
 - Gap in existing datasets this fills
 - Why this location/species/approach was chosen
@@ -500,6 +528,11 @@ MOT Challenge format with species labels:
 ### Source Data
 
 #### Data Collection and Processing
+
+<!-- This section describes the data collection and processing process such as data selection criteria, filtering and normalization methods, re-sizing of images, tools and libraries used, etc. 
+This is what _you_ did to it, from collection through overall processing prior to publication.
+Include links to annotation section below.
+-->
 
 **Field Collection** (describe what YOU did):
 
@@ -539,6 +572,8 @@ MOT Challenge format with species labels:
 
 #### Annotation Process
 
+<!-- This section describes the annotation process such as annotation tools used, the amount of data annotated, annotation guidelines provided to the annotators, interannotator statistics, annotation validation, etc. -->
+
 **🤖 Annotation Method:**
 - [ ] Fully manual
 - [ ] Semi-automated (pre-labeling + review)
@@ -569,6 +604,8 @@ MOT Challenge format with species labels:
 
 #### Who are the annotators?
 
+<!-- This section describes the people or systems who created the annotations. -->
+
 **Annotator Team:**
 - Number of annotators: [X]
 - Expertise: [e.g., "Graduate students in ecology with 2+ years wildlife identification experience"]
@@ -580,6 +617,8 @@ MOT Challenge format with species labels:
 - [Role in annotation process]
 
 ### Personal and Sensitive Information
+<!-- 
+For instance, if your data includes people or endangered species. -->
 
 ⚠️ **Privacy and Security Considerations:**
 
@@ -606,6 +645,10 @@ MOT Challenge format with species labels:
 - [ ] Data access restricted: [describe restrictions]
 
 ## Considerations for Using the Data
+
+<!--
+Things to consider while working with the dataset. For instance, maybe there are hybrids and they are labeled in the `hybrid_stat` column, so to get a subset without hybrids, subset to all instances in the metadata file such that `hybrid_stat` is _not_ "hybrid".
+-->
 
 ### Dataset Statistics
 
@@ -639,6 +682,10 @@ MOT Challenge format with species labels:
 
 ### Bias, Risks, and Limitations
 
+<!-- This section is meant to convey both technical and sociotechnical limitations. Could also address misuse, malicious use, and uses that the dataset will not work well for.-->
+
+<!-- For instance, if your data exhibits a long-tailed distribution (and why). More exmples provided below -->
+
 **⚠️ Known Biases:**
 
 1. **Geographic Bias:**
@@ -671,6 +718,8 @@ MOT Challenge format with species labels:
 - **Community Concerns:** [Any expressed concerns]
 
 ### Recommendations
+
+<!-- This section is meant to convey recommendations with respect to the bias, risk, and technical limitations. -->
 
 **Best Practices for Using This Dataset:**
 
@@ -711,17 +760,10 @@ MOT Challenge format with species labels:
 
 ## Licensing Information
 
-**Dataset License:** [Full license name]
+**Dataset License:** [Full license name](LINK TO LICENSE DEED) 
+<!-- ex: [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)-->
 
-This dataset is released under [license name]. This means you are free to:
-- ✓ Share — copy and redistribute the material
-- ✓ Adapt — remix, transform, and build upon the material
-- [Other permissions]
-
-Under the following terms:
-- [License conditions, e.g., Attribution, NonCommercial, ShareAlike]
-
-**Citation Requirement:** If you use this dataset, you MUST cite both the dataset and associated paper (see Citation section).
+**Citation Requirement:** If you use this dataset, you MUST cite both the dataset and associated paper (see [Citation section](#citation)).
 
 **Image Licensing:** [If different from compilation]
 - Individual images may have different licenses: [describe]
@@ -732,7 +774,7 @@ Under the following terms:
 
 ## Citation
 
-⚠️ **If you use this dataset, please cite:**
+**If you use this dataset, please cite:**
 
 **Dataset:**
 ```bibtex
@@ -779,7 +821,7 @@ We thank:
 - [Annotation team]
 - [Technical support]
 
-This work was supported by the [Imageomics Institute](https://imageomics.org), which is funded by the US National Science Foundation's Harnessing the Data Revolution (HDR) program under [Award #2118240](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2118240).
+This work was supported by the [Imageomics Institute](https://imageomics.org), which is funded by the US National Science Foundation's Harnessing the Data Revolution (HDR) program under [Award #2118240](https://www.nsf.gov/awardsearch/showAward?AWD_ID=2118240) (Imageomics: A New Frontier of Biological Information Powered by Knowledge-Guided Machine Learning). Any opinions, findings and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Science Foundation.
 
 **Conservation Partners:**
 - [Park/reserve management]
@@ -870,4 +912,4 @@ For questions about this dataset:
 
 ---
 
-*This dataset card follows the FAIR² Drone Data Standard (Kline et al., 2025) and extends the Imageomics dataset card template.*
+*This dataset card follows the FAIR² Drone Data Standard (Kline et al., 2025) and extends the [Imageomics dataset card template](https://imageomics.github.io/Imageomics-guide/wiki-guide/HF_DatasetCard_Template_mkdocs/).*
