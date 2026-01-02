@@ -34,6 +34,7 @@ Field data collection using aerial and underwater drones represents substantial 
 - **[TEMPLATE.md](TEMPLATE.md)**: Full dataset card template with detailed field descriptions
 - **[QUICKSTART_GUIDE.md](QUICKSTART_GUIDE.md)**: Checklist-based guide for rapid implementation
 - **[examples/](examples/)**: Reference implementations on real-world datasets
+  - **[KABR Behavior Telemetry](https://github.com/Imageomics/kabr-behavior-telemetry)**: Complete example with GPS extraction, Darwin Core events, and processing scripts
 - **Validation scripts**: Tools for checking standard compliance (coming soon)
 
 ## Getting Started
@@ -71,6 +72,17 @@ Estimated completion time: 2-4 hours depending on dataset complexity
 - Quality metrics and inter-annotator agreement
 - Annotation difficulty and coverage statistics
 - Label sets and class distributions
+
+## Common Workflows
+
+Many datasets require processing raw telemetry and metadata before documentation:
+
+1. **GPS Extraction**: Extract coordinates from flight logs (SRT files, EXIF data, telemetry logs)
+2. **Event Aggregation**: Aggregate video-level data to mission/session-level Darwin Core events
+3. **Occurrence Generation**: Link species detections to biodiversity occurrence records
+4. **Statistics Calculation**: Compute coverage metrics, annotation counts, and class distributions
+
+See the [KABR processing scripts](https://github.com/Imageomics/kabr-behavior-telemetry/tree/main/scripts) for Python examples of GPS extraction, event aggregation, and Darwin Core generation.
 
 ## Target Audiences
 

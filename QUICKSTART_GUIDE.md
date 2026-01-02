@@ -63,6 +63,14 @@ Select the appropriate template based on your primary use case:
 - [ ] **Data Splits**: Describe train/val/test splits with counts and creation method
 - [ ] **Example Files**: Link to at least one representative image
 
+!!! warning "Consistent Naming Conventions"
+
+    Ensure file naming is consistent across videos, telemetry files, and occurrence data:
+    - Use the same date format throughout (e.g., `YYYY_MM_DD` or `DD_MM_YY`)
+    - Match session/flight identifiers exactly between CSV files and data folders
+    - Document any naming changes (e.g., `session_1` → `flight_1`) to maintain data linkages
+    - Test that scripts can locate files using your naming pattern
+
 ---
 
 ## Darwin Core Metadata
@@ -81,6 +89,15 @@ For each survey location/date, document:
 - [ ] **samplingProtocol**: Survey method (e.g., "UAV transect at 60m AGL")
 - [ ] **sampleSizeValue/Unit**: Coverage area and units
 - [ ] **samplingEffort**: Duration or effort metric
+
+!!! tip "Extracting GPS Data from Telemetry"
+
+    If your videos have embedded telemetry (SRT files, EXIF data, or flight logs), you can extract GPS coordinates programmatically:
+    - Use `exiftool` for EXIF GPS data from images
+    - Parse DJI `.SRT` files for frame-level GPS coordinates
+    - Extract launch points, min/max bounds, and altitude ranges
+    - Aggregate video-level data to session/mission-level events
+    - See [KABR scripts](https://github.com/Imageomics/kabr-behavior-telemetry/tree/main/scripts) for Python examples
 
 ### Occurrence Records
 
@@ -265,6 +282,13 @@ For each survey location/date, document:
 - Mark sections to revisit with TODO notes
 - Use EXIF data from images for missing camera/GPS information
 - Estimate reasonably if exact values unavailable (note as approximations)
+
+**Automation Opportunities:**
+- Write scripts to extract GPS/altitude from telemetry files (SRT, EXIF, flight logs)
+- Generate occurrence records from detection annotations
+- Calculate statistics (image counts, annotation distributions) programmatically
+- Aggregate frame-level or video-level data to session-level events
+- Validate Darwin Core format compliance automatically
 
 **For Missing Information:**
 - Document what's unavailable rather than leaving blank
