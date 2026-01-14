@@ -1,4 +1,4 @@
-# FAIR² Drone Data Standard
+# WildFAIRx Drone Data Standard
 
 **A unified metadata standard for drone-based wildlife datasets**
 
@@ -8,7 +8,7 @@
 
 ## Overview
 
-The FAIR² Drone Data Standard provides a comprehensive framework for documenting drone-based wildlife datasets, ensuring they are **Findable, Accessible, Interoperable, and Reusable** while maintaining compliance with Darwin Core biodiversity data standards. This standard bridges ecology, robotics, and computer vision communities by providing unified metadata specifications that enable cross-domain dataset reuse.
+The WildFAIRx Drone Data Standard provides a comprehensive framework for documenting drone-based wildlife datasets, ensuring they are **Findable, Accessible, Interoperable, and Reusable**, **AI-Ready** and are compliant with **Darwin Core** biodiversity data standards. This standard bridges ecology, robotics, and computer vision communities by providing unified metadata specifications that enable cross-domain dataset reuse.
 
 ## Purpose
 
@@ -55,7 +55,7 @@ Estimated completion time: 2-4 hours depending on dataset complexity
 - Data structure and file organization
 - Dataset splits and statistics
 
-### Darwin Core Integration
+### Darwin Core Integration with Humbolt Extension
 - Event records (survey locations, dates, protocols)
 - Occurrence records (species observations, taxonomic hierarchy)
 - Sampling effort and coverage metrics
@@ -82,7 +82,9 @@ Many datasets require processing raw telemetry and metadata before documentation
 3. **Occurrence Generation**: Link species detections to biodiversity occurrence records
 4. **Statistics Calculation**: Compute coverage metrics, annotation counts, and class distributions
 
-See the [KABR processing scripts](https://github.com/Imageomics/kabr-behavior-telemetry/tree/main/scripts) for Python examples of GPS extraction, event aggregation, and Darwin Core generation.
+## Worked Example
+See the [Kenyan Animal Behavior Recognition Dataset with Telemetry](https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry) for an example dataset that is WildFAIRx compliant.
+See also the [KABR processing scripts](https://github.com/Imageomics/kabr-behavior-telemetry/tree/main/scripts) for Python examples of GPS extraction, event aggregation, and Darwin Core generation.
 
 ## Target Audiences
 
@@ -97,10 +99,10 @@ See the [KABR processing scripts](https://github.com/Imageomics/kabr-behavior-te
 If you use this standard or template, please cite:
 
 ```bibtex
-@misc{fair2_drone_standard,
-  title={FAIR² Drone Data Standard for Wildlife Datasets},
-  author={[Authors]},
-  year={2025},
+@misc{fair_drone_standard,
+  title={WildFAIRx Drone Data Standard for Wildlife Datasets},
+  author={Jenna Kline, Elizabeth Campolongo},
+  year={2026},
   publisher={GitHub},
   howpublished={\\url{https://github.com/Imageomics/fair_drones}}
 }
