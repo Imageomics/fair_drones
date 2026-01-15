@@ -43,7 +43,7 @@ Field data collection using aerial and underwater drones represents substantial 
 2. **Select your template** based on primary use case (detection, tracking, behavior, robotics)
 3. **Complete the dataset card** following the [full template](TEMPLATE.md)
 4. **Validate compliance** using provided tools
-5. **Publish your dataset** with FAIR² documentation
+5. **Publish your dataset** with WildFAIRx documentation
 
 Estimated completion time: 2-4 hours depending on dataset complexity
 
