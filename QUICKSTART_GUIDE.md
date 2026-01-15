@@ -2,7 +2,7 @@
 
 **For researchers creating or documenting drone-based wildlife datasets**
 
-Below is a streamlined checklist for creating a WildFAIRz compliant drone dataset card. Review the full [dataset card template](TEMPLATE.md) for detailed guidance.
+Below is a streamlined checklist for creating a WildFAIRx compliant drone dataset card. Review the full [dataset card template](TEMPLATE.md) for detailed guidance.
 
 
 ## Before You Start
@@ -325,4 +325,4 @@ For assistance:
 3. Set aside 2-3 hours to complete the card
 4. Follow the template section by section
 5. Validate your completed card
-6. Publish your FAIR² compliant dataset!
+6. Publish your WildFAIRx compliant dataset!
