@@ -33,8 +33,8 @@ Field data collection using aerial and underwater drones represents substantial 
 
 - **[TEMPLATE.md](TEMPLATE.md)**: Full dataset card template with detailed field descriptions
 - **[QUICKSTART_GUIDE.md](QUICKSTART_GUIDE.md)**: Checklist-based guide for rapid implementation
-- **[examples/](examples/)**: Reference implementations on real-world datasets
-  - **[KABR Behavior Telemetry](https://github.com/Imageomics/kabr-behavior-telemetry)**: Complete example with GPS extraction, Darwin Core events, and processing scripts
+- **[examples/](examples/kabr/README.md)**: Reference implementations on real-world datasets
+  - **[KABR Behavior Telemetry](https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry)**: Complete example with GPS extraction, Darwin Core events, and processing scripts
 - **Validation scripts**: Tools for checking standard compliance (coming soon)
 
 ## Getting Started
@@ -135,7 +135,7 @@ This work builds upon:
 For questions, comments, or concerns:
 - Open an issue on [GitHub](https://github.com/Imageomics/fair_drones/issues)
 - Refer to the [Quick-Start Guide](QUICKSTART_GUIDE.md) for implementation guidance
-- Review [example implementations](examples/) for reference
+- Review [example implementations](examples/kabr/README.md) for reference
 
 ---
 
