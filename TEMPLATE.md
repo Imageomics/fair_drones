@@ -1,5 +1,5 @@
 ---
-# FAIR² DRONE DATASET CARD METADATA (YAML Front Matter)
+# WildFAIRx DRONE DATASET CARD METADATA (YAML Front Matter)
 # This section provides machine-readable metadata following Hugging Face standards
 # Extended with FAIR² and Darwin Core compliance fields
 

@@ -2,13 +2,8 @@
 
 **For researchers creating or documenting drone-based wildlife datasets**
 
-Below is a streamlined checklist for creating a FAIR² compliant drone dataset card. Review the full [dataset card template](TEMPLATE.md) for detailed guidance.
+Below is a streamlined checklist for creating a WildFAIRz compliant drone dataset card. Review the full [dataset card template](TEMPLATE.md) for detailed guidance.
 
-!!! tip "Pro tip"
-
-    Use the eye icon at the top of this page to access the source and copy the markdown for the checklist below into an issue on your GitHub repository so you can check the boxes as you complete each section.
-
----
 
 ## Before You Start
 
@@ -215,7 +210,7 @@ For each survey location/date, document:
 
 ## Validation Checklist
 
-### FAIR² Compliance
+### WildFAIRx Compliance
 
 - [ ] DOI assigned or pending
 - [ ] License clearly stated
