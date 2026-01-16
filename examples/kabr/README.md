@@ -1,6 +1,6 @@
 # KABR Behavior Telemetry Example
 
-This example demonstrates how to create a WildFAIRx-compliant dataset from drone wildlife monitoring data. It showcases the complete workflow for transforming raw drone footage, GPS telemetry, and behavior annotations into a structured, machine-readable dataset that follows FAIR principles and biodiversity data standards.
+This example demonstrates how to create a FAIR² Drones-compliant dataset from drone wildlife monitoring data. It showcases the complete workflow for transforming raw drone footage, GPS telemetry, and behavior annotations into a structured, machine-readable dataset that follows FAIR principles and biodiversity data standards.
 
 ## What This Example Contains
 
@@ -11,7 +11,7 @@ This is a **reference implementation** showing how the [KABR Behavior Telemetry 
 ```
 examples/kabr/
 ├── README.md                          # This file
-├── dataset_card.md                    # WildFAIRx-compliant dataset documentation
+├── dataset_card.md                    # FAIR² Dronesx-compliant dataset documentation
 ├── metadata/
 │   ├── DATA_DICTIONARY.md            # Field-level documentation
 │   └── event_session_fields.csv      # Darwin Core Event mappings
@@ -22,9 +22,9 @@ examples/kabr/
     └── update_video_events.py        # Annotation validation
 ```
 
-### 1. WildFAIRx-Compliant Dataset Card ([dataset_card.md](dataset_card.md))
+### 1. FAIR² Dronesx-Compliant Dataset Card ([dataset_card.md](dataset_card.md))
 A complete dataset card demonstrating how to:
-- Structure metadata following WildFAIRx (FAIR + AI-Ready) principles
+- Structure metadata following FAIR² (FAIR + AI-Ready) principles
 - Implement Darwin Core Event standards for wildlife observations
 - Document drone sensor specifications and camera settings
 - Provide comprehensive provenance and licensing information
@@ -32,7 +32,7 @@ A complete dataset card demonstrating how to:
 
 ### 2. Data Processing Scripts ([scripts/](scripts/))
 
-The following Python scripts demonstrate the complete data preparation pipeline, showing how to transform raw drone data into WildFAIRx-compliant datasets. Script requirements are provided in [Prerequisites](#prerequisites), below.
+The following Python scripts demonstrate the complete data preparation pipeline, showing how to transform raw drone data into FAIR² Drones-compliant datasets. Script requirements are provided in [Prerequisites](#prerequisites), below.
 
 #### **[merge_behavior_telemetry.py](scripts/merge_behavior_telemetry.py)** - Main Pipeline Script
 **What it does:**
@@ -140,7 +140,7 @@ Raw Drone Data                    Processing Scripts              Output Dataset
                                └──► update_video_events.py  ──► 🔗 Source File
                                                                   Provenance
 
-Final Output: WildFAIRx-compliant dataset ready for Hugging Face
+Final Output: FAIR² Dronesx-compliant dataset ready for Hugging Face
 ```
 
 ## Prerequisites
@@ -187,13 +187,13 @@ occurrences = dataset['train']  # Contains all frame-level records
 ```
 
 ### For Dataset Creators
-If you want to **create your own** WildFAIRx-compliant drone dataset:
+If you want to **create your own** FAIR² Drones-compliant drone dataset:
 
 1. **Study the dataset card** ([dataset_card.md](dataset_card.md)) to understand the metadata structure
 2. **Examine the data dictionary** ([metadata/DATA_DICTIONARY.md](metadata/DATA_DICTIONARY.md)) to see field definitions
 3. **Review the processing scripts** ([scripts/](scripts/)) to understand the data pipeline
 4. **Adapt the scripts** for your own drone data sources
-5. **Document your dataset**: download and fill out the [WildFAIRx Dataset Card Template](../../TEMPLATE.md) for your own data
+5. **Document your dataset**: download and fill out the [FAIR² Drones Dataset Card Template](../../TEMPLATE.md) for your own data
 
 **Typical workflow:**
 
@@ -218,7 +218,7 @@ This example illustrates:
 - How to structure **frame-level occurrence records** that link every video frame to its spatial coordinates, camera settings, and observed behaviors
 - How to create **Darwin Core-compliant** wildlife observation data
 - How to document datasets for **reproducibility** and **reusability** in AI/ML research
-- How to apply **WildFAIRx principles** to drone-based wildlife monitoring data
+- How to apply **FAIR² Drones principles** to drone-based wildlife monitoring data
 - How to handle **heterogeneous data formats** (SRT telemetry, XML annotations, video metadata)
 
 ## Common Questions
@@ -235,7 +235,7 @@ A: Yes, but you'll need to modify the telemetry parsing. The `merge_behavior_tel
 
 A: You can still use the pipeline! The scripts will create occurrence records with detection data only. Behavior fields will be empty but the spatial-temporal framework remains valid.
 
-**Q: How do I know if my dataset is WildFAIRx compliant?**
+**Q: How do I know if my dataset is FAIR² Drones compliant?**
 
 A: Use the [dataset_card.md](dataset_card.md) as a checklist. Key requirements:
 - ✓ Darwin Core Event fields for spatial-temporal data
@@ -273,5 +273,5 @@ This example shows that creating FAIR, AI-ready wildlife datasets requires more 
 
 - **Dataset on Hugging Face:** https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry
 - **Darwin Core Standards:** https://dwc.tdwg.org/
-- **WildFAIRx Principles:** See main repository [README](../../README.md)
+- **FAIR² Drones Principles:** See main repository [README](../../README.md)
 - **FAIR Data Principles:** https://www.go-fair.org/fair-principles/

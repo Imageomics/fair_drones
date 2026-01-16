@@ -1,5 +1,5 @@
 ---
-# WildFAIRx DRONE DATASET CARD METADATA (YAML Front Matter)
+# FAIR² DRONE DATASET CARD METADATA (YAML Front Matter)
 # This section provides machine-readable metadata following Hugging Face standards
 # Extended with FAIR² and Darwin Core compliance fields
 
@@ -28,7 +28,7 @@ size_categories:
 
 description: # Add a short description (Quick Summary) of your dataset, this will render as part of the CardData object through the API
 
-# WildFAIRx COMPLIANCE METADATA
+# FAIR² DRONES COMPLIANCE METADATA
 fair2_compliance:
   findable:
     doi: ""  # Add DOI once generated
@@ -85,21 +85,21 @@ mission:
 
 <!-- 
 =============================================================================
-WildFAIRx DRONE DATASET CARD - EXTENDED IMAGEOMICS TEMPLATE
+FAIR² DRONE DATASET CARD - EXTENDED IMAGEOMICS TEMPLATE
 =============================================================================
 
-This dataset card implements the WildFAIRx Drone Data Standard for wildlife monitoring.
+This dataset card implements the FAIR² Drones  Data Standard for wildlife monitoring.
 It extends the standard Imageomics template (https://imageomics.github.io/Imageomics-guide/wiki-guide/HF_DatasetCard_Template_mkdocs/) with additional sections for:
 - Darwin Core biodiversity metadata
 - Platform and sensor specifications  
 - Mission-level operational metadata
 - Cross-disciplinary annotation formats
 
-Fields marked with ⚠️ are REQUIRED for WildFAIRx compliance
+Fields marked with ⚠️ are REQUIRED for FAIR² Drones compliance
 Fields marked with 🌿 are REQUIRED for Darwin Core compliance
 Fields marked with 🤖 are REQUIRED for AI-readiness
 
-For more information on the WildFAIRx Drone Data Standard, see: [paper link to be added]
+For more information on the FAIR² Drones Data Standard, see: [paper link to be added]
 -->
 
 <!-- Include representative image of your dataset -->
@@ -801,10 +801,10 @@ Things to consider while working with the dataset. For instance, maybe there are
 }
 ```
 
-**WildFAIRx Drone Data Standard:**
+**FAIR² Drones Drone Data Standard:**
 ```bibtex
 @article{kline2025wildfair,
-  title = {WildFAIRx: An AI-Ready Standard for Cross-Domain Wildlife Drone Datasets},
+  title = {FAIR² Drones: An AI-Ready Standard for Cross-Domain Wildlife Drone Datasets},
   author = {Kline, Jenna and others},
   year = {2025},
   doi = {10.XXXX/XXXXX}

@@ -1,4 +1,4 @@
-# WildFAIRx Drone Data Standard
+# FAIR² Drones Data Standard
 
 **A unified metadata standard for drone-based wildlife datasets**
 
@@ -8,11 +8,11 @@
 
 ## Overview
 
-The WildFAIRx Drone Data Standard provides a comprehensive framework for documenting drone-based wildlife datasets, ensuring they are **Findable, Accessible, Interoperable, and Reusable**, **AI-Ready** and are compliant with **Darwin Core** biodiversity data standards. This standard bridges ecology, robotics, and computer vision communities by providing unified metadata specifications that enable cross-domain dataset reuse.
+The FAIR² Drones Data Standard provides a comprehensive framework for documenting drone-based wildlife datasets, ensuring they are **Findable, Accessible, Interoperable, and Reusable**, **AI-Ready** and are compliant with **Darwin Core** biodiversity data standards. This standard bridges ecology, robotics, and computer vision communities by providing unified metadata specifications that enable cross-domain dataset reuse.
 
 ## Purpose
 
-Field data collection using aerial and underwater drones represents substantial investment in time, expertise, and resources. However, most datasets serve only single research communities, limiting interdisciplinary potential. The FAIR² standard addresses this by:
+Field data collection using aerial and underwater drones represents substantial investment in time, expertise, and resources. However, most datasets serve only single research communities, limiting interdisciplinary potential. The FAIR² Drones standard addresses this by:
 
 - **Standardizing metadata** across ecology, robotics, and computer vision domains
 - **Integrating Darwin Core** biodiversity standards for ecological compliance
@@ -43,7 +43,7 @@ Field data collection using aerial and underwater drones represents substantial 
 2. **Select your template** based on primary use case (detection, tracking, behavior, robotics)
 3. **Complete the dataset card** following the [full template](TEMPLATE.md)
 4. **Validate compliance** using provided tools
-5. **Publish your dataset** with WildFAIRx documentation
+5. **Publish your dataset** with FAIR² Drones documentation
 
 Estimated completion time: 2-4 hours depending on dataset complexity
 
@@ -83,7 +83,7 @@ Many datasets require processing raw telemetry and metadata before documentation
 4. **Statistics Calculation**: Compute coverage metrics, annotation counts, and class distributions
 
 ## Worked Example
-See the [Kenyan Animal Behavior Recognition Dataset with Telemetry](https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry) for an example dataset that is WildFAIRx compliant.
+See the [Kenyan Animal Behavior Recognition Dataset with Telemetry](https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry) for an example dataset that is FAIR² Drones compliant.
 See also the [KABR processing scripts](https://github.com/Imageomics/kabr-behavior-telemetry/tree/main/scripts) for Python examples of GPS extraction, event aggregation, and Darwin Core generation.
 
 ## Target Audiences
@@ -100,7 +100,7 @@ If you use this standard or template, please cite:
 
 ```bibtex
 @misc{fair_drone_standard,
-  title={WildFAIRx Drone Data Standard for Wildlife Datasets},
+  title={FAIR² Drones Data Standard for Wildlife Datasets},
   author={Jenna Kline, Elizabeth Campolongo},
   year={2026},
   publisher={GitHub},
