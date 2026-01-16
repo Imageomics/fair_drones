@@ -4,7 +4,23 @@ This example demonstrates how to create a WildFAIRx-compliant dataset from drone
 
 ## What This Example Contains
 
-This is a **reference implementation** showing how the [KABR Behavior Telemetry dataset](https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry) was created from drone monitoring of wildlife in Kenya. It includes:
+This is a **reference implementation** showing how the [KABR Behavior Telemetry dataset](https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry) was created from drone monitoring of wildlife in Kenya.
+
+### Directory Structure - KABR Example 
+
+```
+examples/kabr/
+├── README.md                          # This file
+├── dataset_card.md                    # WildFAIRx-compliant dataset documentation
+├── metadata/
+│   ├── DATA_DICTIONARY.md            # Field-level documentation
+│   └── event_session_fields.csv      # Darwin Core Event mappings
+└── scripts/
+    ├── add_gps_data.py               # GPS telemetry integration
+    ├── add_event_times.py            # Timestamp processing
+    ├── merge_behavior_telemetry.py   # Main data pipeline script
+    └── update_video_events.py        # Annotation validation
+```
 
 ### 1. WildFAIRx-Compliant Dataset Card ([dataset_card.md](dataset_card.md))
 A complete dataset card demonstrating how to:
@@ -16,7 +32,7 @@ A complete dataset card demonstrating how to:
 
 ### 2. Data Processing Scripts ([scripts/](scripts/))
 
-These Python scripts demonstrate the complete data preparation pipeline, showing how to transform raw drone data into WildFAIRx-compliant datasets:
+The following Python scripts demonstrate the complete data preparation pipeline, showing how to transform raw drone data into WildFAIRx-compliant datasets. Script requirements are provided in [Prerequisites](#prerequisites), below.
 
 #### **[merge_behavior_telemetry.py](scripts/merge_behavior_telemetry.py)** - Main Pipeline Script
 **What it does:**
@@ -130,11 +146,13 @@ Final Output: WildFAIRx-compliant dataset ready for Hugging Face
 ## Prerequisites
 
 **For using the dataset:** No prerequisites - just install the Hugging Face datasets library:
+
 ```bash
 pip install datasets
 ```
 
-**For running the processing scripts:** You'll need:
+**For running the processing scripts:**
+
 ```bash
 pip install pandas numpy pysrt tqdm
 ```
@@ -148,6 +166,7 @@ Your raw drone data should include:
 ## Getting Started
 
 ### For Dataset Users
+
 If you just want to **use** the dataset for machine learning or analysis:
 
 ```python
@@ -160,11 +179,11 @@ dataset = load_dataset("imageomics/kabr-behavior-telemetry")
 occurrences = dataset['train']  # Contains all frame-level records
 
 # Each record contains:
-# - GPS coordinates (latitude, longitude, altitude)
-# - Camera settings (ISO, shutter, focal_len, etc.)
+# - GPS coordinates (latitude, longitude, altitude) for each frame
+# - Camera settings (ISO, shutter, focal length, etc.)
 # - Animal detections (bounding boxes, species)
-# - Behavior labels (grazing, walking, running, etc.)
-# - Timestamps and frame numbers
+# - Behavior annotations (grazing, walking, running, etc.)
+# - Temporal information (timestamps, video frame numbers)
 ```
 
 ### For Dataset Creators
@@ -174,8 +193,10 @@ If you want to **create your own** WildFAIRx-compliant drone dataset:
 2. **Examine the data dictionary** ([metadata/DATA_DICTIONARY.md](metadata/DATA_DICTIONARY.md)) to see field definitions
 3. **Review the processing scripts** ([scripts/](scripts/)) to understand the data pipeline
 4. **Adapt the scripts** for your own drone data sources
+5. **Document your dataset**: download and fill out the [WildFAIRx Dataset Card Template](../../TEMPLATE.md) for your own data
 
 **Typical workflow:**
+
 ```bash
 # Step 1: Merge all data sources into frame-level occurrences
 python scripts/merge_behavior_telemetry.py --session_data ./raw_data --output_dir ./occurrences
@@ -200,50 +221,22 @@ This example illustrates:
 - How to apply **WildFAIRx principles** to drone-based wildlife monitoring data
 - How to handle **heterogeneous data formats** (SRT telemetry, XML annotations, video metadata)
 
-## Using the Dataset
-
-The resulting dataset is publicly available on Hugging Face:
-
-```python
-from datasets import load_dataset
-dataset = load_dataset("imageomics/kabr-behavior-telemetry")
-```
-
-The dataset provides frame-level records combining:
-- Animal detections (bounding boxes, species)
-- Behavior annotations (grazing, walking, running, etc.)
-- GPS coordinates for each frame
-- Camera metadata (ISO, shutter speed, focal length, etc.)
-- Temporal information (timestamps, video frame numbers)
-
-## Directory Structure
-
-```
-examples/kabr/
-├── README.md                          # This file
-├── dataset_card.md                    # WildFAIRx-compliant dataset documentation
-├── metadata/
-│   ├── DATA_DICTIONARY.md            # Field-level documentation
-│   └── event_session_fields.csv      # Darwin Core Event mappings
-└── scripts/
-    ├── merge_behavior_telemetry.py   # Main data pipeline script
-    ├── add_gps_data.py               # GPS telemetry integration
-    ├── add_event_times.py            # Timestamp processing
-    └── update_video_events.py        # Annotation validation
-```
-
 ## Common Questions
 
 **Q: Do I need the raw video files to use the dataset?**
+
 A: No. The dataset contains frame-level occurrence records with all extracted metadata. Videos are not included due to size constraints, but GPS coordinates and timestamps allow you to recreate spatial-temporal context.
 
 **Q: Can I use these scripts with non-DJI drones?**
+
 A: Yes, but you'll need to modify the telemetry parsing. The `merge_behavior_telemetry.py` script reads DJI's SRT format. For other drones, adapt the `pandify_srt_data()` function to parse your drone's telemetry format.
 
 **Q: What if I only have object detections but no behavior annotations?**
+
 A: You can still use the pipeline! The scripts will create occurrence records with detection data only. Behavior fields will be empty but the spatial-temporal framework remains valid.
 
 **Q: How do I know if my dataset is WildFAIRx compliant?**
+
 A: Use the [dataset_card.md](dataset_card.md) as a checklist. Key requirements:
 - ✓ Darwin Core Event fields for spatial-temporal data
 - ✓ Machine-readable metadata (CSV, JSON)
@@ -252,9 +245,10 @@ A: Use the [dataset_card.md](dataset_card.md) as a checklist. Key requirements:
 - ✓ Field-level documentation (data dictionary)
 
 **Q: Can I contribute improvements to these scripts?**
+
 A: Yes! This is a reference implementation. Contributions that improve generalizability, add support for other drone platforms, or enhance Darwin Core compliance are welcome.
 
-## Troubleshooting
+### Troubleshooting
 
 **"Could not parse eventID" errors:**
 - Check that your `video_events.csv` uses the format: `KABR-2023:DATE_SESSION:VIDEO_ID`
@@ -279,7 +273,5 @@ This example shows that creating FAIR, AI-ready wildlife datasets requires more 
 
 - **Dataset on Hugging Face:** https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry
 - **Darwin Core Standards:** https://dwc.tdwg.org/
-- **WildFAIRx Principles:** See main repository README
+- **WildFAIRx Principles:** See main repository [README](../../README.md)
 - **FAIR Data Principles:** https://www.go-fair.org/fair-principles/
-
-
