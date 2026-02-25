@@ -22,7 +22,7 @@ examples/kabr/
     └── update_video_events.py        # Annotation validation
 ```
 
-### 1. FAIR² Dronesx-Compliant Dataset Card ([dataset_card.md](dataset_card.md))
+### 1. FAIR² Drones-Compliant Dataset Card ([dataset_card.md](dataset_card.md))
 A complete dataset card demonstrating how to:
 - Structure metadata following FAIR² (FAIR + AI-Ready) principles
 - Implement Darwin Core Event standards for wildlife observations
