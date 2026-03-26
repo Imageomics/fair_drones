@@ -10,9 +10,11 @@
 
 The FAIR² Drones Data Standard provides a comprehensive framework for documenting drone-based wildlife datasets, ensuring they are **Findable, Accessible, Interoperable, and Reusable**, **AI-Ready** and are compliant with **Darwin Core** biodiversity data standards. This standard bridges ecology, robotics, and computer vision communities by providing unified metadata specifications that enable cross-domain dataset reuse.
 
+### [We want your feedback! Please fill out our short survey here.](https://osu.az1.qualtrics.com/jfe/form/SV_1LY9K1JgOe2kTz0) 
+
 ## Purpose
 
-Field data collection using aerial and underwater drones represents substantial investment in time, expertise, and resources. However, most datasets serve only single research communities, limiting interdisciplinary potential. The FAIR² Drones standard addresses this by:
+Field data collection using aerial and underwater drones represents a substantial investment in time, expertise, and resources. However, most datasets serve only single research communities, limiting interdisciplinary potential. The FAIR² Drones standard addresses this by:
 
 - **Standardizing metadata** across ecology, robotics, and computer vision domains
 - **Integrating Darwin Core** biodiversity standards for ecological compliance
