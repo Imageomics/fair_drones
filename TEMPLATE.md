@@ -21,6 +21,7 @@ tags:
   - drone
   - uav
   - aerial-imagery
+  - FAIR^2-drone
   # Add specific tags: your species, habitat type, location, etc.
 
 size_categories: 
