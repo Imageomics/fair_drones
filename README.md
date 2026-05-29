@@ -10,8 +10,6 @@
 
 The FAIR² Drones Data Standard provides a comprehensive framework for documenting drone-based wildlife datasets, ensuring they are **Findable, Accessible, Interoperable, and Reusable**, **AI-Ready** and are compliant with **Darwin Core** biodiversity data standards. This standard bridges ecology, robotics, and computer vision communities by providing unified metadata specifications that enable cross-domain dataset reuse.
 
-### [We want your feedback! Please fill out our short survey here.](https://osu.az1.qualtrics.com/jfe/form/SV_1LY9K1JgOe2kTz0) 
-
 ## Purpose
 
 Field data collection using aerial and underwater drones represents a substantial investment in time, expertise, and resources. However, most datasets serve only single research communities, limiting interdisciplinary potential. The FAIR² Drones standard addresses this by:
@@ -85,8 +83,9 @@ Many datasets require processing raw telemetry and metadata before documentation
 4. **Statistics Calculation**: Compute coverage metrics, annotation counts, and class distributions
 
 ## Worked Example
-See the [Kenyan Animal Behavior Recognition Dataset with Telemetry](https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry) for an example dataset that is FAIR² Drones compliant.
-See also the [KABR processing scripts](https://github.com/Imageomics/kabr-behavior-telemetry/tree/main/scripts) for Python examples of GPS extraction, event aggregation, and Darwin Core generation.
+See the [Kenyan Animal Behavior Recognition Dataset with Telemetry](https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry) for an example dataset that is FAIR² Drones compliant. Additional examples will be added to the [FAIR^2 Drones Hugging Face collection](https://huggingface.co/collections/imageomics/fair2-drones) as they become available.
+
+See the [KABR processing scripts](https://github.com/Imageomics/kabr-behavior-telemetry/tree/main/scripts) for Python scripts for GPS extraction, event aggregation, and Darwin Core generation.
 
 ## Target Audiences
 
