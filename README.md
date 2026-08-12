@@ -83,8 +83,9 @@ Many datasets require processing raw telemetry and metadata before documentation
 4. **Statistics Calculation**: Compute coverage metrics, annotation counts, and class distributions
 
 ## Worked Example
-See the [Kenyan Animal Behavior Recognition Dataset with Telemetry](https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry) for an example dataset that is FAIR² Drones compliant.
-See also the [KABR processing scripts](https://github.com/Imageomics/kabr-behavior-telemetry/tree/main/scripts) for Python examples of GPS extraction, event aggregation, and Darwin Core generation.
+See the [Kenyan Animal Behavior Recognition Dataset with Telemetry](https://huggingface.co/datasets/imageomics/kabr-behavior-telemetry) for an example dataset that is FAIR² Drones compliant. Additional examples will be added to the [FAIR^2 Drones Hugging Face collection](https://huggingface.co/collections/imageomics/fair2-drones) as they become available.
+
+See the [KABR processing scripts](https://github.com/Imageomics/kabr-behavior-telemetry/tree/main/scripts) for Python scripts for GPS extraction, event aggregation, and Darwin Core generation.
 
 ## Target Audiences
 
